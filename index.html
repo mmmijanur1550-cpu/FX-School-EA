@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="bn">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
@@ -11,36 +11,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
-<!-- ============================================================
-     ★★★ সেটিংস: শুধু এই ব্লকটি এডিট করলেই চলবে ★★★
-     ============================================================ -->
 <script>
 window.CONFIG = {
-  // ১) সব বাটনের লিংক (টেলিগ্রাম চ্যানেল/গ্রুপ/বট)
   telegramLink: "https://t.me/fxschoolbdpublic",
-
-  // ২) পিক্সেল আইডি বসান (ফাঁকা রাখলে ওই পিক্সেল চালু হবে না)
-  //    একাধিক আইডি লাগলে কমা দিয়ে লিখুন: "1111111111,2222222222"
   facebookPixelId: "",
   tiktokPixelId: "",
-
-  // ৩) বাটন ক্লিক ইভেন্টের নাম
-  //    Facebook: "ButtonClick" (কাস্টম) অথবা "Lead" / "Contact" লিখলে স্ট্যান্ডার্ড ইভেন্ট হিসেবে যাবে
-  //    TikTok: "ClickButton" (স্ট্যান্ডার্ড)
   facebookClickEvent: "ButtonClick",
   tiktokClickEvent: "ClickButton",
-
-  // ৪) হিরো সেকশনের নিচের ফুল-উইডথ ইমেজ (ফাঁকা রাখলে দেখাবে না)
-  heroBannerImage: "https://cdn.youcan.shop/stores/f058fd46b0bc38dcaa44b2527a9d0c4c/others/56AvxPoVmMKpvO6WRPkYwlzO9NbYAvL1JDBq8RGg.jpg",
-
-  // ৫) স্লাইডারের ছবির লিংক (যত খুশি যোগ/মুছুন)
+  heroBannerImage: "https://pub-23d90da0eb284a7aa868021bf688efe4.r2.dev/Forex%20Course/backtest1.webp",
   sliderImages: [
-    "https://cdn.youcan.shop/stores/5a2b1efdf9a08eeb6cd5f1f859406dcd/others/QmMjIfZBShUkyau9ZWFxxj9VFeuuovGGq5BrrY52.jpg",
+    "",
     "https://cdn.youcan.shop/stores/5a2b1efdf9a08eeb6cd5f1f859406dcd/others/qlttvtAhgREb90IqfTReEKFz3NID2czhXbhrDPGo.jpg",
     "https://cdn.youcan.shop/stores/5a2b1efdf9a08eeb6cd5f1f859406dcd/others/PX6YzeLKXnYXWheRD5DaWczdVwqHH2JBm91uIv1s.jpg"
   ],
-  sliderInterval: 3000,       // কত মিলিসেকেন্ড পর পর অটো স্লাইড হবে
-  sliderAspect: "auto"        // "auto" = ছবি পুরোটা দেখাবে (কাটবে না)। চাইলে "16 / 9", "1 / 1" দিতে পারেন
+  sliderInterval: 3000,
+  sliderAspect: "auto"
 };
 </script>
 
@@ -51,7 +36,7 @@ tailwind.config = {
     extend: {
       screens: { xs: '420px' },
       fontFamily: {
-        sans: ['"Hind Siliguri"', '"Poppins"', 'sans-serif'],
+        sans: ['"Poppins"', '"Hind Siliguri"', 'sans-serif'],
         display: ['"Poppins"', '"Hind Siliguri"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       }
@@ -61,11 +46,10 @@ tailwind.config = {
 </script>
 
 <style>
-  body{background-color:#070B1A;color:#E2E8F0;overflow-x:hidden;font-family:'Hind Siliguri','Poppins',sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+  body{background-color:#070B1A;color:#E2E8F0;overflow-x:hidden;font-family:'Poppins','Hind Siliguri',sans-serif;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
   .pb-safe{padding-bottom:max(env(safe-area-inset-bottom,0px),10px)}
   .pt-safe{padding-top:max(env(safe-area-inset-top,0px),0px)}
 
-  /* ===== কীফ্রেমস ===== */
   @keyframes gradMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
   @keyframes sheenSweep{0%{transform:translateX(-120%) rotate(25deg)}45%,100%{transform:translateX(420%) rotate(25deg)}}
   @keyframes glowPulse{0%,100%{box-shadow:0 0 18px rgba(108,92,231,.55),0 0 40px rgba(0,210,255,.25)}50%{box-shadow:0 0 34px rgba(108,92,231,.9),0 0 80px rgba(0,210,255,.55)}}
@@ -83,27 +67,23 @@ tailwind.config = {
   @keyframes bounceX{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
   @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 
-  /* ===== অ্যানিমেটেড CTA বাটন ===== */
   .cta{position:relative;isolation:isolate;overflow:hidden;
     background:linear-gradient(135deg,#6C5CE7,#00D2FF,#6C5CE7);background-size:220% 220%;
     animation:gradMove 6s ease-in-out infinite,glowPulse 3s ease-in-out infinite;
     transition:filter .3s ease,box-shadow .3s ease}
   .cta:hover{filter:brightness(1.12)}
   .cta:active{filter:brightness(.92)}
-  /* আলোর ঝলক */
   .cta::after{content:'';position:absolute;top:-60%;left:-40%;width:28%;height:220%;z-index:-1;pointer-events:none;
     background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.6),rgba(255,255,255,0));
     animation:sheenSweep 3.6s ease-in-out infinite}
-  /* বাইরের রিপল রিং */
   .ripple-wrap{position:relative;display:block}
-    .cta-gold{background:linear-gradient(135deg,#FFB938,#FF7A45,#FFB938);background-size:220% 220%;color:#2B1500;
+  .cta-gold{background:linear-gradient(135deg,#FFB938,#FF7A45,#FFB938);background-size:220% 220%;color:#2B1500;
     animation:gradMove 6s ease-in-out infinite,glowGold 3s ease-in-out infinite}
   .arrow-move{display:inline-block}
   
   .text-gradient-cyan-purple{background:linear-gradient(135deg,#00D2FF 0%,#A29BFE 50%,#6C5CE7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
   .text-gradient-gold{background:linear-gradient(135deg,#FFE066 0%,#FFB938 50%,#FF7A45 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
-  /* ===== স্লাইডার ===== */
   #sliderViewport{touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
   #sliderViewport:active{cursor:grabbing}
   #sliderTrack{display:flex;will-change:transform}
@@ -146,8 +126,8 @@ tailwind.config = {
 
 <a data-cta="header_telegram" class="cta shrink-0 inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2.5 rounded-xl text-white font-semibold text-xs sm:text-sm" href="https://t.me/fxschoolbdpublic" target="_blank" rel="noopener">
 <span class="material-symbols-outlined text-[17px]">send</span>
-<span class="hidden xs:inline">টেলিগ্রাম চ্যানেল</span>
-<span class="inline xs:hidden">টেলিগ্রাম</span>
+<span class="hidden xs:inline">Telegram Channel</span>
+<span class="inline xs:hidden">Telegram</span>
 </a>
 </div>
 </header>
@@ -160,11 +140,11 @@ tailwind.config = {
 <!-- ================= HERO ================= -->
 <section class="pt-6 pb-12 flex flex-col items-center text-center">
 <h1 class="hero-h1 text-3xl sm:text-5xl lg:text-6xl font-bold font-sans tracking-tight text-white leading-[1.25] sm:leading-[1.2] max-w-4xl">
-  স্মার্ট অ্যালগরিদমে ট্রেড করুন — <span class="text-gradient-cyan-purple font-extrabold">নো-ইমোশন, অটোমেটেড MT5</span> প্রফিট সিস্টেম
+  Trade with Smart Algorithms — <span class="text-gradient-cyan-purple font-extrabold">Emotion-Free, Automated MT5</span> Trading System
 </h1>
 
 <p class="mt-5 text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
-  মার্কেট অ্যানালাইসিস থেকে প্রিসিশন এক্সিকিউশন — মানুষের কোনো ভুল ছাড়াই <span class="text-[#00D2FF] font-semibold">২৪/৫ নিরবচ্ছিন্ন অটোমেটেড ট্রেডিং</span>। সম্পূর্ণ ফ্রীতেই <span class="text-gradient-gold font-bold">৩ দিনের ফ্রি ট্রায়াল ব্যবহার করুন</span>।
+  From market analysis to precision execution — <span class="text-[#00D2FF] font-semibold">24/5 continuous automated trading</span> without human error. Try it with a <span class="text-gradient-gold font-bold">24 Hour Free Trail</span>.
 </p>
 
 <div class="mt-8 w-full max-w-md flex flex-col items-center gap-3">
@@ -206,11 +186,11 @@ tailwind.config = {
 <section id="heroBanner" class="pt-2 pb-8">
 <div class="text-center max-w-2xl mx-auto mb-6">
 <h2 class="text-2xl sm:text-4xl font-bold font-sans text-white">
-  <span class="text-gradient-gold">লাস্ট ১ বছরের</span> ব্যাকটেস্ট রেজাল্ট
+  <span class="text-gradient-gold">1-Month</span> Backtest Results
 </h2>
 </div>
 <div class="rounded-2xl p-[1.5px] bg-gradient-to-tr from-[#6C5CE7] via-[#00D2FF] to-[#00F298] shadow-[0_0_40px_rgba(108,92,231,0.3)]">
-<img id="heroBannerImg" alt="লাস্ট ১ বছরের ব্যাকটেস্ট রেজাল্ট" class="block w-full h-auto rounded-[14px] bg-[#0C1230]" decoding="async"/>
+<img id="heroBannerImg" alt="1-year backtest results" class="block w-full h-auto rounded-[14px] bg-[#0C1230]" decoding="async"/>
 </div>
 </section>
 
@@ -218,80 +198,68 @@ tailwind.config = {
 <section class="py-12">
 <div class="text-center max-w-2xl mx-auto mb-10">
 <h2 class="text-2xl sm:text-4xl font-bold font-sans text-white">
-  রোবট এর মূল বৈশিষ্ট্য <span class="text-gradient-cyan-purple">(Core Features)</span>
+  Robot <span class="text-gradient-cyan-purple">Core Features</span>
 </h2>
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+
+<!-- Feature 1 -->
 <div class="p-6 rounded-2xl bg-gradient-to-b from-[#0C1230] to-[#070B1A] border border-[#1F2A56] hover:border-[#6C5CE7]/60 hover:shadow-[0_0_25px_rgba(108,92,231,0.25)] transition-all group">
 <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#6C5CE7] to-[#00D2FF] p-[1.5px] mb-4 shadow-[0_0_15px_rgba(108,92,231,0.4)]">
 <div class="w-full h-full bg-[#090F26] rounded-[10px] flex items-center justify-center text-[#00D2FF] group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-[26px]">psychology_alt</span>
 </div></div>
 <h3 class="text-lg font-bold font-sans text-white mb-2 group-hover:text-[#00D2FF] transition-colors">Zero-Emotion Trading</h3>
-<p class="text-slate-400 text-sm leading-relaxed">লোভ, ভয় বা আতঙ্কের কোনো সুযোগ নেই। শতভাগ হিসাব-নিকাশ ও নিয়মের মাধ্যমে অটোমেটিক ট্রেড পরিচালনা হয়</p>
+<p class="text-slate-400 text-sm leading-relaxed">No room for greed, fear, or panic. Trades are managed automatically using predefined calculations and rules.</p>
 </div>
 
+<!-- Feature 2 -->
 <div class="p-6 rounded-2xl bg-gradient-to-b from-[#0C1230] to-[#070B1A] border border-[#1F2A56] hover:border-[#00F298]/60 hover:shadow-[0_0_25px_rgba(0,242,152,0.2)] transition-all group">
 <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#00F298] to-[#00D2FF] p-[1.5px] mb-4 shadow-[0_0_15px_rgba(0,242,152,0.4)]">
 <div class="w-full h-full bg-[#090F26] rounded-[10px] flex items-center justify-center text-[#00F298] group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-[26px]">security</span>
 </div></div>
 <h3 class="text-lg font-bold font-sans text-white mb-2 group-hover:text-[#00F298] transition-colors">Dynamic Stop-Loss &amp; Breakeven</h3>
-<p class="text-slate-400 text-sm leading-relaxed">প্রতিটা ট্রেডেই সেফ স্টপ-লস সেট করা থাকে। মার্কেট একটু ফেভারে আসতেই এটা নিজে থেকেই রিস্ক ফ্রি বা ব্রেক-ইভেন করে নেয়</p>
+<p class="text-slate-400 text-sm leading-relaxed">Every trade has a protective stop-loss. When the market moves in your favor, the EA automatically moves the trade to risk-free or breakeven.</p>
 </div>
 
+<!-- Feature 3 -->
 <div class="p-6 rounded-2xl bg-gradient-to-b from-[#0C1230] to-[#070B1A] border border-[#1F2A56] hover:border-[#FFB938]/60 hover:shadow-[0_0_25px_rgba(255,185,56,0.25)] transition-all group">
 <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#FFB938] to-[#FF7A45] p-[1.5px] mb-4 shadow-[0_0_15px_rgba(255,185,56,0.4)]">
 <div class="w-full h-full bg-[#090F26] rounded-[10px] flex items-center justify-center text-[#FFB938] group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-[26px]">workspace_premium</span>
 </div></div>
-<h3 class="text-lg font-bold font-sans text-white mb-2 group-hover:text-[#FFB938] transition-colors">Smart Trad Engine</h3>
-<p class="text-slate-400 text-sm leading-relaxed">SMC & ICT কনসেপ্ট অনুযায়ি এনালাইসিস করে মার্কেট কোন দিকে যাচ্ছে তা আগে থেকেই বুঝতে পেরে সঠিক সময়ে বাই বা সেল এন্ট্রি নেয় এবং প্রফেশনাল ভাবে ট্রেড ম্যানেজ করে</p>
+<h3 class="text-lg font-bold font-sans text-white mb-2 group-hover:text-[#FFB938] transition-colors">Smart Trading Engine</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Analyzes the market using SMC and ICT concepts to anticipate its direction, enter buy or sell trades at the right time, and manage trades professionally.</p>
 </div>
 
-<div class="p-6 rounded-2xl bg-gradient-to-b from-[#0C1230] to-[#070B1A] border border-[#1F2A56] hover:border-[#FF5E62]/60 hover:shadow-[0_0_25px_rgba(255,94,98,0.25)] transition-all group">
-<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#FF5E62] to-[#6C5CE7] p-[1.5px] mb-4 shadow-[0_0_15px_rgba(255,94,98,0.4)]">
-<div class="w-full h-full bg-[#090F26] rounded-[10px] flex items-center justify-center text-[#FF5E62] group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[26px]">newspaper</span>
-</div></div>
-<h3 class="text-lg font-bold font-sans text-white mb-2 group-hover:text-[#FF5E62] transition-colors">High-Impact News Filter</h3>
-<p class="text-slate-400 text-sm leading-relaxed">CPI, NFP, FOMC এর মতো হাই-ভোলাটিলিটি নিউজের ৩০ মিনিট আগে স্বয়ংক্রিয়ভাবে ট্রেড পজিশন বন্ধ করে ফলে নিউজে অতিরিক্ত স্প্রেড বা লসের ঝুঁকি এড়ায়</p>
-</div>
-
+<!-- Feature 4 -->
 <div class="p-6 rounded-2xl bg-gradient-to-b from-[#0C1230] to-[#070B1A] border border-[#1F2A56] hover:border-[#00D2FF]/60 hover:shadow-[0_0_25px_rgba(0,210,255,0.25)] transition-all group">
 <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#00D2FF] to-[#6C5CE7] p-[1.5px] mb-4 shadow-[0_0_15px_rgba(0,210,255,0.4)]">
 <div class="w-full h-full bg-[#090F26] rounded-[10px] flex items-center justify-center text-[#00D2FF] group-hover:scale-110 transition-transform">
 <span class="material-symbols-outlined text-[26px]">currency_exchange</span>
 </div></div>
 <h3 class="text-lg font-bold font-sans text-white mb-2 group-hover:text-[#00D2FF] transition-colors">Gold Scalping</h3>
-<p class="text-slate-400 text-sm leading-relaxed">এটি XAUUSD (Gold), এবং EURUSD পেয়ারে নিখুতভাবে এনালাইসিস করে সঠিক ট্রেড নেয়</p>
+<p class="text-slate-400 text-sm leading-relaxed">Analyzes XAUUSD (Gold) and EURUSD precisely to take the right trades.</p>
 </div>
 
-<div class="p-6 rounded-2xl bg-gradient-to-b from-[#0C1230] to-[#070B1A] border border-[#1F2A56] hover:border-[#00F298]/60 hover:shadow-[0_0_25px_rgba(0,242,152,0.25)] transition-all group">
-<div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-[#00F298] to-[#FFB938] p-[1.5px] mb-4 shadow-[0_0_15px_rgba(0,242,152,0.4)]">
-<div class="w-full h-full bg-[#090F26] rounded-[10px] flex items-center justify-center text-[#00F298] group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-[26px]">speed</span>
-</div></div>
-<h3 class="text-lg font-bold font-sans text-white mb-2 group-hover:text-[#00F298] transition-colors">Microsecond Execution</h3>
-<p class="text-slate-400 text-sm leading-relaxed"> ১ মিলি-সেকেন্ডেরও কম সময়ে ট্রেড এক্সিকিউট করে যার ফলে কোনো স্লিপেজ হয় না</p>
-</div>
-</div>
-</section>
+</div><!-- ✅ Grid closing tag was missing here -->
+</section><!-- ✅ Section closing tag was missing here -->
 
-<!-- ================= IMAGE SLIDER (NEW) ================= -->
+<!-- ================= IMAGE SLIDER ================= -->
 <section class="py-10" id="gallery">
 <div class="text-center max-w-2xl mx-auto mb-8">
 <h2 class="text-2xl sm:text-4xl font-bold font-sans text-white">
-  লাইভ একাউন্ট এর <span class="text-gradient-gold">পারফরমেন্স</span>
+  Live Account <span class="text-gradient-gold">Performance</span>
 </h2>
 </div>
 <div class="relative">
 <div id="sliderViewport" class="overflow-hidden rounded-2xl">
 <div id="sliderTrack"></div>
 </div>
-<button id="slPrev" class="sl-btn left-1 sm:-left-3" aria-label="আগের ছবি" type="button"><span class="material-symbols-outlined text-[22px]">chevron_left</span></button>
-<button id="slNext" class="sl-btn right-1 sm:-right-3" aria-label="পরের ছবি" type="button"><span class="material-symbols-outlined text-[22px]">chevron_right</span></button>
+<button id="slPrev" class="sl-btn left-1 sm:-left-3" aria-label="Previous image" type="button"><span class="material-symbols-outlined text-[22px]">chevron_left</span></button>
+<button id="slNext" class="sl-btn right-1 sm:-right-3" aria-label="Next image" type="button"><span class="material-symbols-outlined text-[22px]">chevron_right</span></button>
 <div id="sliderDots" class="flex justify-center items-center gap-2 mt-5"></div>
 </div>
 </section>
@@ -304,22 +272,22 @@ tailwind.config = {
 <div class="flex flex-col items-center text-center max-w-3xl mx-auto">
 
 <h2 class="text-2xl sm:text-4xl font-extrabold font-sans text-white leading-tight">
-  কোনো কার্ড বা পেমেন্ট ছাড়াই <br/>
-  <span class="text-gradient-gold">১০০% ফ্রি ট্রায়াল এক্সপেরিয়েন্স নিন!</span>
+  No credit card or payment required <br/>
+  <span class="text-gradient-gold">Get a 100% Free Trial!</span>
 </h2>
 
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full mt-8 text-left">
 <div class="p-4 rounded-xl bg-[#070B1A]/80 border border-[#1F2A56] flex items-start gap-3">
-<div class="w-9 h-9 rounded-lg bg-[#6C5CE7] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_12px_rgba(108,92,231,0.5)]">১</div>
-<div><h4 class="text-sm font-bold font-sans text-white">টেলিগ্রামে জয়েন করুন</h4></div>
+<div class="w-9 h-9 rounded-lg bg-[#6C5CE7] text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_12px_rgba(108,92,231,0.5)]">1</div>
+<div><h4 class="text-sm font-bold font-sans text-white">Join Us on Telegram</h4></div>
 </div>
 <div class="p-4 rounded-xl bg-[#070B1A]/80 border border-[#1F2A56] flex items-start gap-3">
-<div class="w-9 h-9 rounded-lg bg-[#00D2FF] text-black flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_12px_rgba(0,210,255,0.5)]">২</div>
-<div><h4 class="text-sm font-bold font-sans text-white">EA ফাইল ডাউনলোড</h4></div>
+<div class="w-9 h-9 rounded-lg bg-[#00D2FF] text-black flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_12px_rgba(0,210,255,0.5)]">2</div>
+<div><h4 class="text-sm font-bold font-sans text-white">Download the EA File</h4></div>
 </div>
 <div class="p-4 rounded-xl bg-[#070B1A]/80 border border-[#1F2A56] flex items-start gap-3">
-<div class="w-9 h-9 rounded-lg bg-[#00F298] text-black flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_12px_rgba(0,242,152,0.5)]">৩</div>
-<div><h4 class="text-sm font-bold font-sans text-white">লাইসেন্স KEY দিয়ে একটিভ করুন</h4></div>
+<div class="w-9 h-9 rounded-lg bg-[#00F298] text-black flex items-center justify-center font-bold text-sm shrink-0 shadow-[0_0_12px_rgba(0,242,152,0.5)]">3</div>
+<div><h4 class="text-sm font-bold font-sans text-white">Activate with Your License Key</h4></div>
 </div>
 </div>
 
@@ -327,7 +295,7 @@ tailwind.config = {
 <span class="ripple-wrap w-full rounded-2xl">
 <a data-cta="trial_download" class="cta cta-gold group w-full py-4 px-5 rounded-2xl flex items-center justify-center gap-3 font-bold text-[15px] sm:text-lg border border-white/30 leading-snug" href="https://t.me/fxschoolbdpublic" target="_blank" rel="noopener">
 <span class="text-xl">🎁</span>
-<span class="font-sans">এখনই ফ্রি ট্রায়াল ফাইল ডাউনলোড করুন</span>
+<span class="font-sans">Download Your Free Trial File Now</span>
 <span class="text-xl arrow-move">→</span>
 </a>
 </span>
@@ -341,7 +309,7 @@ tailwind.config = {
 <section class="py-12">
 <div class="text-center max-w-2xl mx-auto mb-10">
 <h2 class="text-2xl sm:text-4xl font-bold font-sans text-white">
-  রোবট ট্রেডিং এর <span class="text-gradient-gold">বিশেষ সুবিধাসমূহ</span>
+  The <span class="text-gradient-gold">Advantages of Robot Trading</span>
 </h2>
 </div>
 
@@ -351,7 +319,7 @@ tailwind.config = {
 <div class="px-5 sm:px-6 py-4 bg-red-500/10 border-b border-red-500/20 flex items-center gap-3">
 <span class="material-symbols-outlined text-[26px] text-red-400">cancel</span>
 <div class="leading-tight">
-<h3 class="text-red-300 font-bold font-sans text-base sm:text-lg">ম্যানুয়াল ট্রেডিং</h3>
+<h3 class="text-red-300 font-bold font-sans text-base sm:text-lg">Manual Trading</h3>
 <span class="font-mono text-[10px] uppercase tracking-wider text-slate-500">Traditional Human</span>
 </div>
 </div>
@@ -359,35 +327,35 @@ tailwind.config = {
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-red-500/15 border border-red-500/40 text-red-400 flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">close</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">ইমোশনাল ডিসিশন</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">ভয়, লোভ ও ফোমো (FOMO)-র কারণে ভুল সময়ে অতিরিক্ত লটে এন্ট্রি নিয়ে অ্যাকাউন্ট খালি করা।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">Emotional Decisions</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Fear, greed, and FOMO can lead to oversized trades at the wrong time and may wipe out an account.</p>
 </div>
 </li>
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-red-500/15 border border-red-500/40 text-red-400 flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">close</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">ক্লান্তি ও সময় ব্যয়</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">সারাদিন চার্টের দিকে ঘণ্টার পর ঘণ্টা তাকিয়ে থাকতে হয়, এতে শারীরিক ও মানসিক চাপ বাড়ে।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">Fatigue and Time Consumption</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Watching charts for hours every day can increase physical and mental stress.</p>
 </div>
 </li>
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-red-500/15 border border-red-500/40 text-red-400 flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">close</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">দেরিতে এক্সিকিউশন</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">ম্যানুয়ালি ক্লিক করতে ১-৩ সেকেন্ড দেরি হয়ে যায়, ফলে ভালো এন্ট্রি পয়েন্ট মিস হয়।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">Delayed Execution</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Manual clicks can take 1–3 seconds, causing you to miss potential entry points.</p>
 </div>
 </li>
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-red-500/15 border border-red-500/40 text-red-400 flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">close</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">অনিয়মিত রিস্ক কন্ট্রোল</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">লস হলে রিভেঞ্জ ট্রেড নেওয়া এবং স্টপ-লস ছাড়া পজিশন ধরে রাখা।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">Inconsistent Risk Control</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Taking revenge trades after losses and holding positions without a stop-loss.</p>
 </div>
 </li>
 </ul>
 </div>
 
-<!-- ApexPulse -->
+<!-- Fx School EA -->
 <div class="rounded-2xl bg-gradient-to-b from-[#0C1230] to-[#070B1A] border border-[#00F298]/50 shadow-[0_0_30px_rgba(0,242,152,0.15)] overflow-hidden">
 <div class="px-5 sm:px-6 py-4 bg-[#00F298]/10 border-b border-[#00F298]/25 flex items-center gap-3">
 <span class="material-symbols-outlined text-[26px] text-[#00F298]">check_circle</span>
@@ -400,29 +368,29 @@ tailwind.config = {
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-[#00F298]/15 border border-[#00F298]/50 text-[#00F298] flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">check</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">১০০% নো-ইমোশন</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">প্রি-ডিফাইন্ড গাণিতিক রুলস ফলো করে স্বয়ংক্রিয়ভাবে ঠান্ডা মাথায় প্রফিট লক করে।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">Emotion-Free Trading</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Follows predefined mathematical rules and automatically locks in profits without emotion.</p>
 </div>
 </li>
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-[#00F298]/15 border border-[#00F298]/50 text-[#00F298] flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">check</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">২৪/৫ নন-স্টপ নজরদারি</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">আপনি ঘুমান বা অন্য কাজ করুন, রোবট নিরবচ্ছিন্নভাবে মার্কেট স্ক্যান করে।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">24/5 Continuous Monitoring</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Whether you are asleep or busy with other tasks, the robot continuously scans the market.</p>
 </div>
 </li>
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-[#00F298]/15 border border-[#00F298]/50 text-[#00F298] flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">check</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">মিলিসেকেন্ড স্পিড</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">মার্কেট মোমেন্টাম তৈরি হওয়ার ১ মিলি-সেকেন্ডে নিখুঁত অর্ডার বুক এক্সিকিউশন।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">Millisecond Execution</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Executes orders precisely within 1 millisecond as market momentum develops.</p>
 </div>
 </li>
 <li class="flex items-start gap-3 py-3.5">
 <span class="mt-0.5 w-6 h-6 shrink-0 rounded-full bg-[#00F298]/15 border border-[#00F298]/50 text-[#00F298] flex items-center justify-center"><span class="material-symbols-outlined text-[15px]">check</span></span>
 <div class="min-w-0">
-<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">কঠোর রিস্ক ম্যানেজমেন্ট</h4>
-<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">অটো স্টপ-লস, ট্রেইলিং ব্রেক-ইভেন ও হাই ইমপ্যাক্ট নিউজ ফিল্টার সার্বক্ষণিক সচল।</p>
+<h4 class="text-white font-semibold font-sans text-[15px] leading-snug">Strict Risk Management</h4>
+<p class="mt-1 text-slate-400 text-[13px] sm:text-sm leading-relaxed">Automated stop-loss, trailing breakeven, and high-impact news filters help manage trading risk.</p>
 </div>
 </li>
 </ul>
@@ -439,11 +407,11 @@ tailwind.config = {
 </div>
 <div>
 <h4 class="text-white font-bold font-sans text-base sm:text-lg">Free Public Community</h4>
-<p class="text-slate-400 text-xs sm:text-sm">ট্রেডিংয়ের খুঁটিনাটি, লাইভ প্রফিট স্ক্রিনশট আর আপডেট পেতে এখনই আমাদের চ্যানেলে জয়েন করুন।</p>
+<p class="text-slate-400 text-xs sm:text-sm">Join our channel for trading insights, live performance screenshots, and updates.</p>
 </div>
 </div>
 <a data-cta="community_join" class="cta w-full sm:w-auto text-center px-5 py-3 rounded-xl text-white font-semibold text-sm shrink-0" href="https://t.me/fxschoolbdpublic" target="_blank" rel="noopener">
-  কমিউনিটিতে যোগ দিন <span class="arrow-move">→</span>
+  Join the Community <span class="arrow-move">→</span>
 </a>
 </div>
 </section>
@@ -453,16 +421,6 @@ tailwind.config = {
 <!-- ================= FOOTER ================= -->
 <footer class="w-full bg-[#050813] border-t border-[#141C38] pt-6 pb-28 sm:pb-16 text-slate-400 text-xs font-sans">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-8">
-<div class="p-5 rounded-2xl bg-[#090D1E] border border-red-500/20 text-slate-400 leading-relaxed">
-<div class="flex items-center gap-2 text-red-400 font-bold mb-1.5 font-mono text-xs uppercase tracking-wide">
-<span class="material-symbols-outlined text-[18px]">warning</span>
-<span>High-Risk Financial Disclosure &amp; Legal Disclaimer</span>
-</div>
-<p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed">
-  ফরেক্স (Forex) ও CFD ট্রেডিং উচ্চ ঝুঁকির আর্থিক খাত এবং এটি সকল বিনিয়োগকারীর জন্য উপযুক্ত নাও হতে পারে। অতীতের অডিটেড পারফরম্যান্স বা MetaTrader 5 (MT5) ব্যাকটেস্ট রেজাল্ট ভবিষ্যতের নিশ্চিত আয়ের নিশ্চয়তা দেয় না। কখনোই সেই পরিমাণ অর্থ ডিপোজিট করবেন না যা হারালে আপনার স্বাভাবিক জীবনযাত্রায় প্রভাব পড়ে। আমাদের EA একটি স্বয়ংক্রিয় সফটওয়্যার টুল — কোনো নিশ্চিত লাভের সিস্টেম নয়।
-</p>
-</div>
-
 <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#121933] text-[11px] font-mono">
 <div class="flex items-center gap-2">
 <span class="w-2 h-2 rounded-full bg-[#00F298]"></span>
@@ -483,42 +441,38 @@ tailwind.config = {
 <div class="hidden xs:flex flex-col leading-tight shrink-0">
 <span class="font-sans text-xs font-bold text-white flex items-center gap-1.5">
 <span class="relative flex w-2 h-2"><span class="absolute inline-flex w-full h-full rounded-full bg-[#00F298] opacity-75 animate-ping"></span><span class="relative inline-flex w-2 h-2 rounded-full bg-[#00F298]"></span></span>
-৩ দিনের ফ্রি ট্রায়াল
+24 Hour Free Trial
 </span>
-<span class="font-mono text-[10px] text-slate-400">কোনো পেমেন্ট প্রোয়োজন নেই</span>
+<span class="font-mono text-[10px] text-slate-400">No payment required</span>
 </div>
 <a data-cta="sticky_bar_trial" class="cta flex-1 sm:flex-initial sm:px-8 py-3 px-3 rounded-xl flex items-center justify-center gap-2 text-white font-bold text-[13px] sm:text-sm leading-tight text-center" href="https://t.me/fxschoolbdpublic" target="_blank" rel="noopener">
 <span class="material-symbols-outlined text-[19px] shrink-0">send</span>
-<span class="font-sans font-bold">👉 ৩ দিনের ফ্রি ট্রায়াল নিন এখুনি</span>
+<span class="font-sans font-bold">👉 Get 24 Hour Free Trial Now</span>
 </a>
 </div>
 </aside>
 
 <!-- ============================================================
-     SCRIPTS: লিংক সেট + পিক্সেল (Facebook / TikTok) + স্লাইডার
+     SCRIPTS
      ============================================================ -->
 <script>
 (function(){
   var C = window.CONFIG || {};
 
-  /* ---------- ১. সব CTA বাটনে টেলিগ্রাম লিংক সেট ---------- */
   if (C.telegramLink) {
     document.querySelectorAll('[data-cta]').forEach(function(a){ a.setAttribute('href', C.telegramLink); });
   }
 
-  /* ---------- ২. পিক্সেল সেটআপ ---------- */
   function ids(v){ return String(v||'').split(',').map(function(s){return s.trim();}).filter(Boolean); }
   var fbIds = ids(C.facebookPixelId);
   var ttIds = ids(C.tiktokPixelId);
 
-  // Facebook Pixel (শুধু আইডি দিলেই চালু হবে) → PageView
   if (fbIds.length) {
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbIds.forEach(function(id){ fbq('init', id); });
     fbq('track', 'PageView');
   }
 
-  // TikTok Pixel (শুধু আইডি দিলেই চালু হবে) → PageView
   if (ttIds.length) {
     !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
       ttIds.forEach(function(id){ ttq.load(id); });
@@ -526,7 +480,6 @@ tailwind.config = {
     }(window,document,'ttq');
   }
 
-  /* ---------- ৩. বাটন ক্লিক ইভেন্ট ---------- */
   var FB_STANDARD = ['Lead','Contact','CompleteRegistration','Subscribe','ViewContent','AddToCart','InitiateCheckout','Purchase','Search','SubmitApplication','Schedule','FindLocation','Donate','CustomizeProduct','StartTrial'];
   document.addEventListener('click', function(e){
     var el = e.target.closest && e.target.closest('[data-cta]');
@@ -544,12 +497,10 @@ tailwind.config = {
     } catch (err) {}
   }, true);
 
-  /* ---------- হিরো ব্যানার ---------- */
   var hb = document.getElementById('heroBanner');
   if (C.heroBannerImage && String(C.heroBannerImage).trim()) { document.getElementById('heroBannerImg').src = C.heroBannerImage; }
   else { hb.style.display = 'none'; }
 
-  /* ---------- ৪. অটো ইমেজ স্লাইডার ---------- */
   var imgs = (C.sliderImages || []).filter(function(s){ return s && String(s).trim(); });
   var section = document.getElementById('gallery');
   if (!imgs.length) { section.style.display = 'none'; return; }
@@ -561,7 +512,7 @@ tailwind.config = {
       nextB = document.getElementById('slNext');
   var n = imgs.length, per = 1, total = n + 1, idx = 0, busy = false, timer = null, startX = null, busyT = null;
 
-  function perView(){ return window.innerWidth >= 768 ? 3 : 1; }   // কম্পিউটারে ৩ কলাম, মোবাইলে ১ কলাম
+  function perView(){ return window.innerWidth >= 768 ? 3 : 1; }
 
   function setPos(animate){
     track.style.transition = animate ? 'transform .7s cubic-bezier(.22,.8,.3,1)' : 'none';
@@ -584,7 +535,7 @@ tailwind.config = {
       var im = document.createElement('img');
       im.className = 'slide-img';
       im.src = imgs[j % n];
-      im.alt = 'ApexPulse EA screenshot ' + ((j % n) + 1);
+      im.alt = 'Fx School EA screenshot ' + ((j % n) + 1);
       im.draggable = false;
       im.decoding = 'async';
       if (C.sliderAspect && C.sliderAspect !== 'auto') { im.style.aspectRatio = C.sliderAspect; }
@@ -595,7 +546,7 @@ tailwind.config = {
     for (var k = 0; k < n; k++) {
       (function(k){
         var d = document.createElement('button');
-        d.type = 'button'; d.className = 'dot'; d.setAttribute('aria-label', 'ছবি ' + (k + 1));
+        d.type = 'button'; d.className = 'dot'; d.setAttribute('aria-label', 'Image ' + (k + 1));
         d.addEventListener('click', function(){ go(k); restart(); });
         dotsEl.appendChild(d);
       })(k);
@@ -606,7 +557,7 @@ tailwind.config = {
   function lock(){ busy = true; clearTimeout(busyT); busyT = setTimeout(unlock, 900); }
   function unlock(){
     clearTimeout(busyT);
-    if (idx >= n) { idx -= n; setPos(false); void track.offsetWidth; }   // সিমলেস লুপ
+    if (idx >= n) { idx -= n; setPos(false); void track.offsetWidth; }
     busy = false; updateDots();
   }
   function go(i){
